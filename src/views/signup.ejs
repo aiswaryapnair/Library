@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+    <nav class="navbar nav-dgs navbar-expand-lg navbar-dark bg-light sticky-top">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand bg-transparent" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <!-- <a class="navbar-brand" href="#"><button class=" btn btn-success bg-transparent">Home</button></a> -->
+            <ul class="navbar-brand nav " >
+              <%for(i=0;i<nav.length;i++){%>
+
+              <li>
+                <a  href="<%=nav[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav[i].name%></button></a>
+
+              </li>
+              <%}%>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class=" title " >
+ <h1 >LIBRARY</h1>
+    </div>
+    <div class="container col-lg-4">
+      <%for(i=1;i<2;i++){%>
+      <form class="form-brd" action="<%=nav[i].link%>" onsubmit="return validate();"><%}%>
+        <h3 class="text-center">SIGN UP</h3>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="uname" onkeyup="validatename();" placeholder=" Name" >
+          <label id="namemsg"></label>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="email" onkeyup="validateEmail();" placeholder="Email Adress" aria-describedby="emailHelp">
+         <label id="error"></label>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="phone" placeholder="Mobile Number" onkeyup="validatePhone();" >
+          <label id="errormsg"></label>
+        </div>
+        <div class="mb-3">
+          <input type="password" id="psw" class="form-control " placeholder="Password" aria-describedby="passwordHelpBlock">
+        <label id="passalt"></label>
+        </div>
+        <div class="mb-3">
+          <input type="password" id="rpsw" class="form-control " placeholder="Retype-Password" onkeyup="check();" aria-describedby="passwordHelpBlock">
+         <label id="confirmmsg"></label>
+        </div>
+        <div class=" d-grid gap2">
+          <button class="btn btn-colr ">Create Account</button>
+
+          <!-- <button type="submit" class="btn btn-colr">Create Account</button> -->
+        </div><br>
+        
+      </form>
+    </div>
+    </body>
+<script src="js/script.js">
+//   var uname=document.getElementById("uname");
+// var email=document.getElementById("email");
+// var number=document.getElementById("number");
+// var psw=document.getElementById("psw");
+// var rpsw=document.getElementById("rpsw");
+// var error=document.getElementById("error");
+// // function valid(){
+// //     if(uname.value==null){
+// //         uname.style.border="2px solid red";
+// //     }
+// // }
+
+</script>  
+  </html>

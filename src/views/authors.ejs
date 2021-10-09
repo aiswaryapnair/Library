@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+    <nav class="navbar nav-dgs navbar-expand-lg navbar-dark bg-light sticky-top">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand bg-transparent" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <!-- <a class="navbar-brand" href="#"><button class=" btn btn-success bg-transparent">Home</button></a> -->
+            <ul class="navbar-brand nav " >
+              <%for(i=0;i<nav.length;i++){%>
+
+              <li>
+                <a  href="<%=nav[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav[i].name%></button></a>
+
+              </li>
+              <%}%>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Authors
+        </h1>
+      </div>
+       -->
+        
+
+<div class="container  col-lg-12 ">
+  <div class="h2  text-center text-danger mt-3">Authors </div>
+  <div class=" h5 text-center fst-italic text-success" >“Choose an author as you choose a friend”</div>
+  <hr class="md-5">
+
+      <div class=" row row-cols-1 row-cols-md-5 g-5  ">
+        <%for(i=0;i<authors.length;i++){%>
+
+        <div class="col ">
+
+    <div class="card h-100 shadow-lg " >
+
+        <img class="card-img-top"  src="images/<%=authors[i].img%>" width="170px" height="150px" alt="">
+        <div class="card-body"  >
+            <h5 class="card-title fst-italic"><%=authors[i].author%></h4>
+            <!-- <p cla"card-text" -->
+            <ul class="card-text">
+              <li>
+              <%=authors[i].country%> </li><li> <%=authors[i].dob%> </li>   </ul>
+           <a class="stretched-link"  href="/authors/<%=i%>">Read More</a>
+        </div>
+    </div>
+    </div>
+    <%}%>
+    
+  </div><!-- /cont -->
+  
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
