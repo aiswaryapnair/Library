@@ -24,13 +24,13 @@
           <div class="navbar-nav">
             <!-- <a class="navbar-brand" href="#"><button class=" btn btn-success bg-transparent">Home</button></a> -->
             <ul class="navbar-brand nav " >
-              <%for(i=0;i<nav.length;i++){%>
 
               <li >
-                <a  href="<%=nav[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav[i].name%></button></a>
 
+                <a  href="/home"><button class="btn-space  btn btn-success bg-transparent">Back</button></a>
+                <a  href="/"><button class="btn-space  btn btn-success bg-transparent">Logout</button></a>
               </li>
-              <%}%>
+              
           </ul>
           </div>
         </div>
@@ -38,7 +38,7 @@
     </nav>
 <div class="container col-md-10 row mt-4">
   <div class="col-md-5">
-<img src="/images/<%=book.img%>" alt="" width=300px height="300px"></div>
+<img src="/images/<%=book.image%>" alt="" width=300px height="300px"></div>
 <div class="col-md-5">
 <h3 class="text-center text-success text-uppercase"><%=book.title%></h3>
 <hr>
@@ -48,11 +48,14 @@
      and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.</p>
 </div> -->
 <h6 class="text-primary">Author:<%=book.author%></h6>
-<h6 class="text-primary">Gener:<%=book.gener%></h6>
-<h6 class="text-primary">Language:<%=book.lang%></h6>
-<h6 class="text-primary">Published:<%=book.publish%></h6>
+<h6 class="text-primary">Gener:<%=book.genre%></h6>
+<h6 class="text-primary">Language:<%=book.language%></h6>
+<h6 class="text-primary">Published:<%=book.published%></h6>
+<%if(finduser=='admin'){%>
 
-  </div>
+<a href="/books/update/<%=id%>" ><button>Update</button></a><a href="/admin/deletebooks/<%=id%>"><button>Delete</button></a>
+<%}%> 
+</div>
 </div>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>

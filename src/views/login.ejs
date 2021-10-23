@@ -6,12 +6,12 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
   
 	<body>
@@ -25,10 +25,10 @@
           <div class="navbar-nav">
             <!-- <a class="navbar-brand" href="#"><button class=" btn btn-success bg-transparent">Home</button></a> -->
             <ul class="navbar-brand nav " >
-              <%for(i=0;i<nav.length;i++){%>
+              <%for(i=0;i<nav1.length;i++){%>
 
               <li>
-                <a  href="<%=nav[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav[i].name%></button></a>
+                <a  href="<%=nav1[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav1[i].name%></button></a>
 
               </li>
               <%}%>
@@ -41,18 +41,18 @@
  <h1 >LIBRARY</h1>
 
     </div>
-    <div class="container col-lg-4">          <%for(i=0;i<1;i++){%>
+    <div class="container col-lg-4">          
 
-      <form class="form-brd" action="<%=nav2[i].link%>" onsubmit="return validate();"><%}%>
+      <form class="form-brd" method="POST" action="/login/valid" onsubmit="return validate();">
         <h3 class="text-center">LOGIN</h3>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"></label>
-          <input type="text" class="form-control" id="email" placeholder=" Email Adress" required  aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="email" name="email" placeholder=" Email Adress" required  aria-describedby="emailHelp">
           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
         </div>
         <div class="mb-3">
           <!-- <label for="inputPassword5" class="form-label">Password</label> -->
-          <input type="password" id="psw" class="form-control " placeholder="Password" required aria-describedby="passwordHelpBlock">
+          <input type="password" id="psw" name="psw" class="form-control " placeholder="Password" required aria-describedby="passwordHelpBlock">
           <div id="passwordHelpBlock" class="form-text">
             <!-- Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
           </div> -->
@@ -66,7 +66,7 @@
         <hr>
         <div class="d-grid gap-2 col-6 mx-auto">
           <%for(i=2;i<3;i++){%>
-          <a href="<%=nav[2].link%>"><button class="btn btn-colr" type="button">Create An Account</button><%}%></a>
+          <a href="<%=nav1[2].link%>"><button class="btn btn-colr" type="button">Create An Account</button><%}%></a>
         </div>
 
       </form>
@@ -82,10 +82,7 @@
       //   uname.style.border="2px solid red";}
 
       
-      else{
-        alert("Not valid!usename:admin and password:12345");
-        return false;
-      }
+      
     }
     </script>
     </body></html>

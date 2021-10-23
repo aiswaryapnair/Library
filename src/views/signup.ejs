@@ -41,22 +41,22 @@
     </div>
     <div class="container col-lg-4">
       <%for(i=1;i<2;i++){%>
-      <form class="form-brd" action="<%=nav[i].link%>" onsubmit="return validate();"><%}%>
+      <form class="form-brd" action="/admin/enter" method="POST"  onsubmit="return validate();"><%}%>
         <h3 class="text-center">SIGN UP</h3>
         <div class="mb-3">
-          <input type="text" class="form-control" id="uname" onkeyup="validatename();" placeholder=" Name" >
+          <input type="text" class="form-control" id="uname" name="name" onkeyup="validatename();" placeholder=" Name" >
           <label id="namemsg"></label>
         </div>
         <div class="mb-3">
-          <input type="text" class="form-control" id="email" onkeyup="validateEmail();" placeholder="Email Adress" aria-describedby="emailHelp">
+          <input type="text" class="form-control" id="email" name="email" onkeyup="validateEmail();" placeholder="Email Adress" aria-describedby="emailHelp">
          <label id="error"></label>
         </div>
         <div class="mb-3">
-          <input type="text" class="form-control" id="phone" placeholder="Mobile Number" onkeyup="validatePhone();" >
+          <input type="text" class="form-control" id="phone" name="mobile" placeholder="Mobile Number" onkeyup="validatePhone();" >
           <label id="errormsg"></label>
         </div>
         <div class="mb-3">
-          <input type="password" id="psw" class="form-control " placeholder="Password" aria-describedby="passwordHelpBlock">
+          <input type="password" id="psw" class="form-control " name="psw" placeholder="Password" aria-describedby="passwordHelpBlock">
         <label id="passalt"></label>
         </div>
         <div class="mb-3">

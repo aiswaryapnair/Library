@@ -6,12 +6,12 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body  id="img-up">
     <nav class="navbar nav-dgs navbar-expand-lg navbar-dark bg-light sticky-top">
@@ -24,13 +24,27 @@
           <div class="navbar-nav">
             <!-- <a class="navbar-brand" href="#"><button class=" btn btn-success bg-transparent">Home</button></a> -->
             <ul class="navbar-brand nav " >
-              <%for(i=0;i<nav.length;i++){%>
-
+           
+<%if(finduser=='admin'){%>%>
               <li>
-                <a  href="<%=nav[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav[i].name%></button></a>
+                <a  href="/books"><input type="text value=<%=finduser%>" hidden> <button class="btn-space  btn btn-success bg-transparent">Books</button></a>
+                <a  href="/authors"><input type="text value=<%=finduser%>" hidden> <button class="btn-space  btn btn-success bg-transparent">Authors</button></a>
+                <a  href="/addbook"><input type="text value=<%=finduser%>" hidden> <button class="btn-space  btn btn-success bg-transparent">AddBooks</button></a>
+                <a  href="/addbook"><input type="text value=<%=finduser%>" hidden> <button class="btn-space  btn btn-success bg-transparent">AddAuthors</button></a>
+                <a  href="/"><button class="btn-space  btn btn-success bg-transparent">Logout</button></a>
 
               </li>
               <%}%>
+              <%if(finduser=='user'){%>%>
+
+              <li>
+                <a  href="/books"><input type="text value=<%=finduser%>" hidden><button class="btn-space  btn btn-success bg-transparent">Books</button></a>
+                <a  href="/authors"><input type="text value=<%=finduser%>" hidden> <button class="btn-space  btn btn-success bg-transparent">Authors</button></a>
+                <a  href="/"><button class="btn-space  btn btn-success bg-transparent">Logout</button></a>
+
+              </li>
+<%}%>
+              
           </ul>
           </div>
         </div>

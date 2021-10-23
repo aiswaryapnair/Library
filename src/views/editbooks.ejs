@@ -40,38 +40,38 @@
       <div class="h3  text-center text-danger mt-3">BOOKS</div>
     <hr class="md-5">
         <div class=" form-brd   mb-5">
-    <form  class="content-center" action="/admin/add" method="POST" enctype="multipart/form-data">
+    <form  class="content-center" action="/admin/editbooks" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
-    
+    <input type="text" value="<%=id%>" name="bid" hidden>
           <label for="exampleInputEmail1" class="form-label">Book Title</label>
-          <input type="text" class="form-control"  id="btitle" name="title"required>
+          <input type="text" class="form-control"  id="btitle" value="<%=book.title%>" name="title">
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label" >Author</label>
-            <input type="text" class="form-control" id="author" name="author" onkeyup="validatebook();" required >
+            <input type="text" class="form-control" id="author" name="author" value="<%=book.author%>" onkeyup="validatebook();"  >
             <label id="msg"></label>
           </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label" >Gener</label>
-          <input type="text" class="form-control" id="gener" name="genre" onkeyup="validategener();" required>
+          <input type="text" class="form-control" id="gener" name="genre" value="<%=book.genre%>" onkeyup="validategener();" >
           <label id="emsg"></label>
 
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Language</label>
-            <input type="text" class="form-control" id="lng" name="lng" onkeyup="validatelang();" required>
+            <input type="text" class="form-control" id="lng" name="lng" value="<%=book.language%>" onkeyup="validatelang();" >
             <label id="lmsg"></label>
 
           </div>
        <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Published </label>
-        <input type="date" class="form-control" id="publish" name="publish" required>
+        <input type="date" class="form-control" id="publish" name="publish" value="<%=book.published%>" >
        </div>
    <div class="mb-3">
-    <input type="file" name="image" required multiple/>
+    <input type="file" name="imagebooks" value="<%=book.image%>" multiple/>
   </div>
        <div class="d-grid gap-2">
-        <button type="submit" class="btn btn-primary ">Submit</button></div>
+        <button type="submit" class="btn btn-primary ">Update</button></div>
      
       </form></div></div>
 

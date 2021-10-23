@@ -24,13 +24,17 @@
           <div class="navbar-nav">
             <!-- <a class="navbar-brand" href="#"><button class=" btn btn-success bg-transparent">Home</button></a> -->
             <ul class="navbar-brand nav " >
-              <%for(i=0;i<nav.length;i++){%>
 
+                <li>
+  
+               
               <li >
-                <a  href="<%=nav[i].link%>"><button class="btn-space  btn btn-success bg-transparent"><%=nav[i].name%></button></a>
+                <a  href="/home"><button class="btn-space  btn btn-success bg-transparent">Back</button></a>
+                <a  href="/"><button class="btn-space  btn btn-success bg-transparent">Logout</button></a>
+
 
               </li>
-              <%}%>
+            
           </ul>
           </div>
         </div>
@@ -50,15 +54,19 @@
         <div class="col ">
 
     <div class="card h-100 shadow-lg " >
-
-        <img class="card-img-top"  src="images/<%=books[i].img%>" width="170px" height="150px" alt="">
+      <input type="text value=<%=finduser%>" hidden>
+        <img class="card-img-top"  src="images/<%=books[i].image%>" width="170px" height="150px" alt="">
         <div class="card-body"  >
             <h5 class="card-title fst-italic"><%=books[i].title%></h4>
             <!-- <p class="card-text" -->
             <ul class="card-text">
               <li>
-              <%=books[i].author%> </li><li><%=books[i].gener%> </li>   </ul>
-           <a class="stretched-link"  href="/books/<%=i%>">Read More</a>
+              <%=books[i].author%> </li>
+              <li><%=books[i].genre%> </li> 
+              <li><%=books[i].language%> </li>
+              <li><%=books[i].published%> </li>
+            </ul>
+           <a class="stretched-link"  href="/books/<%=books[i]._id%>">Read More</a>
         </div>
     </div>
     </div>

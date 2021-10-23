@@ -6,12 +6,12 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
     <nav class="navbar nav-dgs navbar-expand-lg navbar-dark bg-light sticky-top">
@@ -35,48 +35,35 @@
         </div>
       </div>
     </nav>
-    
-    
+    <div class="container col-lg-5    ">
+      <div class="h3  text-center text-danger mt-3">Authors</div>
+    <hr class="md-5">
+        <div class=" form-brd   mb-5">
+            <form  class="content-center" action="/admin/editauthor" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <input type="text" value="<%=id%>" name="bid" hidden>
 
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <h1>Authors
-        </h1>
-      </div>
-       -->
-        
-
-<div class="container  col-lg-12 ">
-  <div class="h2  text-center text-danger mt-3">Authors </div>
-  <div class=" h5 text-center fst-italic text-success" >“Choose an author as you choose a friend”</div>
-  <hr class="md-5">
-  <input type="text value=<%=finduser%>" hidden>
-
-      <div class=" row row-cols-1 row-cols-md-5 g-5  ">
-        <%for(i=0;i<authors.length;i++){%>
-
-        <div class="col ">
-
-    <div class="card h-100 shadow-lg " >
-
-        <img class="card-img-top"  src="images/<%=authors[i].image%>" width="170px" height="150px" alt="">
-        <div class="card-body"  >
-            <h5 class="card-title fst-italic"><%=authors[i].author%></h4>
-            <!-- <p cla"card-text" -->
-            <ul class="card-text">
-              <li>
-              <%=authors[i].country%> </li><li> <%=authors[i].dob%> </li>   </ul>
-           <a class="stretched-link"  href="/authors/<%=authors[i]._id%>">Read More</a>
+          <label for="exampleInputEmail1" class="form-label">Author</label>
+          <input type="text" class="form-control" id="auth" name="author" value="<%author.author%>" onkeyup="validauthor();" required>
+          <label id="msg"></label>
         </div>
-    </div>
-    </div>
-    <%}%>
-    
-  </div><!-- /cont -->
-  
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
-</html>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Country</label>
+            <input type="text" class="form-control" id="con" name="country" value="<%author.country%>" onkeyup="validcon();" required >
+            <label id="emsg"></label>
+          </div>
+       <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control" id="dob" value="<%author.dob%>" name="dob" required>
+       </div><br>
+   <div class="mb-3">
+    <input type="file" name="imageauth" required multiple/>
+  </div><br>
+       <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary ">Update</button></div>
+     
+      </form></div></div>
+
+<script src="/js/script.js"></script>
+    </body>
+    </html>
